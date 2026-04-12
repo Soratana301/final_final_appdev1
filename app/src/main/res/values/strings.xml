@@ -1,0 +1,56 @@
+<resources>
+    <string name="app_name">FInal_Exer1_POS</string>
+    <string name="hello_blank_fragment">Cart Fragment</string>
+
+    <string-array name="Pc_parts">
+        <item>  Nvision N2455PRO </item>
+        <item>  VENGEANCE® 32GB (1x32GB) DDR5 </item>
+        <item>  Logitech G304 </item>
+        <item>  MSI B550m </item>
+        <item>  INPLAY Inplay Hyper GF650 (80+ Gold) </item>
+        <item>  GEFORCE RTX 3050 Ventus </item>
+        <item>  Acer 240mm AIO Cooler </item>
+        <item>  Fanxiang S500 Pro </item>
+        <item>  INPLAY Meteor 03 </item>
+        <item>  Thermal Grizzly Kryonaut </item>
+    </string-array>
+
+    <string-array name="Pricing">
+        <item>  3,495 </item>
+        <item>  25,469 </item>
+        <item>  670 </item>
+        <item>  6,288 </item>
+        <item>  819 </item>
+        <item>  14,995 </item>
+        <item>  2,559 </item>
+        <item>  1,004 </item>
+        <item>  2,339 </item>
+        <item>  179 </item>
+    </string-array>
+
+    <string-array name="ProductDescriptions">
+        <item>The Nvision N2455PRO-B is a budget-friendly 23.8-inch Full HD (1920x1080) IPS monitor featuring a 100Hz refresh rate and a 5ms response time. Designed for office work, casual gaming, and media consumption, it offers 16.7 million colors, a 1000:1 contrast ratio, and WLED backlighting. It is VESA mount compatible and available in black.</item>
+        <item>CORSAIR VENGEANCE DDR5, optimized for Intel® motherboards, delivers higher frequencies and greater capacities of DDR5 technology in a high-quality, compact module that suits your system.</item>
+        <item>The Logitech G304 LIGHTSPEED is a budget-friendly wireless gaming mouse featuring a HERO 12,000 DPI sensor, 1ms report rate, and 6 programmable buttons. It runs on a single AA battery, providing up to 250 hours of gaming. It is highly regarded for its performance, compact, and lightweight (99g) design.</item>
+        <item>The MSI B550M PRO-VDH WIFI is a budget-friendly Micro-ATX motherboard designed for AMD Ryzen 3000-5000 series processors, featuring PCIe 4.0, M.2 Gen4 support, and DDR4 boost. It is popular for its reliable, balanced performance in productive workflows and compact gaming builds, offering features like 4 DIMM slots (128GB max) and built-in Wi-Fi. </item>
+        <item>The Inplay Hyper GF650 (80+ Gold) is a significant step up from standard entry-level power supplies, specifically engineered to meet modern hardware standards like ATX 3.0 and PCIe 5.1. This makes it a future-proof choice for users planning to use high-performance graphics cards.</item>
+        <item>The GeForce RTX™ 3060 6GB is built with the NVIDIA Ampere architecture, featuring dedicated Ray Tracing Cores, AI Tensor Cores, and high-speed G6 memory. Step up to GeForce RTX.</item>
+        <item>an all-in-one liquid cooler that balances high-performance thermal management with a distinct visual style, including a real-time temperature display on the pump head.</item>
+        <item>Fanxiang S500 Pro M.2 SSD adds graphene heat dissipation stickers to provide effective heat dissipation control for internal SSD, improve its performance and service life, up to 640 TBW Terabytes Written) HIGH-SPEED TRANSMISSION: Accelerate the reading and writing performance of solid-state hard drives through intelligent SLC cache technology</item>
+        <item>The Inplay Meteor 03 is a mid-tower gaming PC case known for its affordable price and modern design, featuring a tempered glass side panel and a full PSU shroud. It is available in both black and white finishes. </item>
+        <item>Kryonaut thermal paste was developed specifically for extremely demanding applications and the highest demands of the overlocking community.</item>
+    </string-array>
+
+    <array name="Showcase">
+        <item>@drawable/monitor</item>
+        <item>@drawable/ram</item>
+        <item>@drawable/mouse</item>
+        <item>@drawable/motherboard</item>
+        <item>@drawable/psu</item>
+        <item>@drawable/gpu</item>
+        <item>@drawable/cooler</item>
+        <item>@drawable/ssd</item>
+        <item>@drawable/pc_case</item>
+        <item>@drawable/thermal_paste</item>
+    </array>
+</resources>

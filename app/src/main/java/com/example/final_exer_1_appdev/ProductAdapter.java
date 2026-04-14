@@ -51,7 +51,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
 
             bundle.putString("name", names[position]);
             bundle.putString("price", prices[position]);
-            bundle.putString("desc", descriptions[position]); // NEW
+            bundle.putString("desc", descriptions[position]);
             bundle.putInt("image", images[position]);
 
             androidx.navigation.Navigation.findNavController(v)

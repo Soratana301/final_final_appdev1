@@ -10,11 +10,11 @@
     <!-- TODO: Update blank fragment layout -->
 
     <Button
-        android:id="@+id/btn1"
+        android:id="@+id/CARTbtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="568dp"
-        android:text="Button"
+        android:text="CART"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.551"
         app:layout_constraintStart_toStartOf="parent"

@@ -1,17 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp">
 
+    <!-- PRODUCT IMAGE -->
     <ImageView
         android:id="@+id/detailImage"
         android:layout_width="200dp"
         android:layout_height="200dp"
         android:layout_gravity="center"
-        android:scaleType="centerCrop"/>
+        android:scaleType="centerCrop" />
 
+    <!-- NAME -->
     <TextView
         android:id="@+id/detailName"
         android:layout_width="wrap_content"
@@ -20,6 +23,7 @@
         android:textStyle="bold"
         android:layout_marginTop="10dp"/>
 
+    <!-- PRICE -->
     <TextView
         android:id="@+id/detailPrice"
         android:layout_width="wrap_content"
@@ -27,10 +31,57 @@
         android:textSize="18sp"
         android:layout_marginTop="5dp"/>
 
+    <!-- DESCRIPTION -->
     <TextView
         android:id="@+id/detailDescription"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"/>
+
+    <!-- CONTROLS -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp">
+
+        <!-- QUANTITY INPUT -->
+
+        <!-- ADD TO CART -->
+
+        <EditText
+            android:id="@+id/quantityInput"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="72dp"
+            android:ems="10"
+            android:hint="Enter quantity"
+            android:inputType="number"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/addcartbtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Add to Cart"
+            app:layout_constraintEnd_toStartOf="@id/gotocartbtn"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/quantityInput" />
+
+        <!-- GO TO CART -->
+        <Button
+            android:id="@+id/gotocartbtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Cart"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/addcartbtn"
+            app:layout_constraintTop_toBottomOf="@id/quantityInput" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </LinearLayout>

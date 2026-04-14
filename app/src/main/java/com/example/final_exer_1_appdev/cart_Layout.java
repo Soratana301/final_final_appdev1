@@ -1,64 +1,87 @@
 package com.example.final_exer_1_appdev;
 
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link cart_Layout#newInstance} factory method to
- * create an instance of this fragment.
- */
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import java.util.ArrayList;
+
 public class cart_Layout extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    RecyclerView recyclerView;
+    CartAdapter adapter;
+    TextView totalPriceText;
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+    // CART DATA
 
-    public cart_Layout() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment cart_Layout.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static cart_Layout newInstance(String param1, String param2) {
-        cart_Layout fragment = new cart_Layout();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
+    public static ArrayList<String> cartNames = new ArrayList<>();
+    public static ArrayList<String> cartPrices = new ArrayList<>();
+    public static ArrayList<String> cartQuantities = new ArrayList<>();
+    public static ArrayList<Integer> cartImages = new ArrayList<>();
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_cart__layout, container, false);
+
+        View view = inflater.inflate(R.layout.fragment_cart__layout, container, false);
+
+        recyclerView = view.findViewById(R.id.cartRecyclerView);
+        totalPriceText = view.findViewById(R.id.totalPriceText);
+
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+
+        adapter = new CartAdapter(
+                cartNames,
+                cartPrices,
+                cartQuantities,
+                cartImages
+        );
+
+        recyclerView.setAdapter(adapter);
+
+        calculateTotal();
+
+        adapter.registerAdapterDataObserver(new RecyclerView.AdapterDataObserver() {
+            @Override
+            public void onChanged() {
+                calculateTotal();
+            }
+
+            @Override
+            public void onItemRangeRemoved(int positionStart, int itemCount) {
+                calculateTotal();
+            }
+        });
+
+        return view;
+    }
+
+    private void calculateTotal() {
+
+        int total = 0;
+
+        for (int i = 0; i < cartPrices.size(); i++) {
+
+            String priceStr = cartPrices.get(i)
+                    .replace("₱", "")
+                    .replace(",", "")
+                    .trim();
+
+            int price = 0;
+            int qty = 1;
+
+            try { price = Integer.parseInt(priceStr); } catch (Exception ignored) {}
+            try { qty = Integer.parseInt(cartQuantities.get(i)); } catch (Exception ignored) {}
+
+            total += price * qty;
+        }
+
+        totalPriceText.setText("Total: ₱" + total);
     }
 }
